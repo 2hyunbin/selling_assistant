@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중고거래 AI 에이전트</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>중고거래 AI 에이전트</h1>
+        </header>
+
+        <!-- Main Content: Left (Chat) + Right (Listings) -->
+        <div class="main-content">
+            <!-- Left Panel: Chat -->
+            <div class="chat-panel">
+                <div class="panel-header">
+                    <h2>채팅</h2>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <div class="markdown-content">
+                                <p>안녕하세요! <strong>중고거래 AI 에이전트</strong>입니다.</p>
+                                <p>무엇을 도와드릴까요?</p>
+                                <div class="example-questions-box">
+                                    <h3>💡 예시 질문</h3>
+                                    <ul>
+                                        <li><strong>"어제 올린 물건 보여줘"</strong></li>
+                                        <li><strong>"맥북 가격 10% 낮춰줘"</strong></li>
+                                        <li><strong>"가장 오래된 매물 끌어올려줘"</strong></li>
+                                        <li><strong>"전자기기 시세 알려줘"</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="chat-input-area">
+                    <input
+                        type="text"
+                        id="chatInput"
+                        class="chat-input"
+                        placeholder="메시지를 입력하세요..."
+                        autocomplete="off"
+                    />
+                    <button id="sendButton" class="send-button">전송</button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Listings -->
+            <div class="listings-panel">
+                <div class="panel-header">
+                    <h2>판매목록</h2>
+                </div>
+
+                <!-- Listings Grid -->
+                <div class="listings-grid" id="listingsGrid">
+                    <!-- Listings will be inserted here by JavaScript -->
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <p>판매중인 매물이 없습니다</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>처리 중...</p>
+    </div>
+
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
